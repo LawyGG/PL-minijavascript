@@ -21,12 +21,12 @@
   <pre id=OUTPUT></pre>
 
    
-  <script>
-	function dump(fileName) {
-		$.get(fileName), function (data){
-			$("#INPUT").val(data);
-		});
-	};
-  </script>
+<script>
+      function dump(fileName) {
+          $.get(fileName, function (data) {
+              $("#INPUT").val(data);
+          });
+      };
+    </script> 
   
-  <button id="input2" type="button" oneclick=dump("insput2.txt")>Input2 </button>
+        <button id ="input2" type="button" onclick="dump('input2.txt');">input2</button>
