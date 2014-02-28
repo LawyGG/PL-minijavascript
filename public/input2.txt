@@ -1,1 +1,6 @@
-aiosdhfñoi
+  var a = "hello"; // initialize a
+     var b = function(x) {
+             var c = 3;
+	     var d = 4;
+               return x+c;
+             };

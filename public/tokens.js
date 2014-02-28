@@ -28,7 +28,7 @@ String.prototype.tokens = function () {
     var WHITES              = /\s+/g;
     var ID                  = /[a-zA-Z_]\w*/g;
     var NUM                 = /\b\d+(\.\d*)?([eE][+-]?\d+)?\b/g;
-    var STRING              = /('(\\.|[^'])*'|"(\\.|[^"])*")/g;
+    var STRING              = /('(\\.|[^'])*'|"(\\.|[^"])*")/g; //'
     var ONELINECOMMENT      = /\/\/.*/g;
     var MULTIPLELINECOMMENT = /\/[*](.|\n)*?[*]\//g;
     var TWOCHAROPERATORS    = /([+][+=]|-[-=]|=[=<>]|[<>][=<>]|&&|[|][|])/g;
@@ -80,7 +80,7 @@ String.prototype.tokens = function () {
         } 
         // string
         else if (m = STRING.bexec(this)) {
-            result.push(make('string', getTok().replace(/^["']|["']$/g,'')));
+            result.push(make('string', getTok().replace(/^["']|["']$/g,''))); //'
         } 
         // two char operator
         else if (m = TWOCHAROPERATORS.bexec(this)) {
