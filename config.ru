@@ -1,2 +1,2 @@
-require './index.html'
+require './index'
 run Sinatra::Application
