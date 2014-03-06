@@ -40,7 +40,7 @@ body {
     color: black;
     background-color: #CCFB5D; 
     width: 60%;
-    margin: 0 21em;
+    margin: 0 auto;
     text-align: left;
     /*Bordes redondeados (kawaii desu!)*/
     -moz-border-radius: 10px;
@@ -52,14 +52,13 @@ body {
 
 
 a {
-  font-size: x-large;
+  font-size: large;
   text-decoration:none;
 }
 
 a:link { color:white; }
-a:visited { color:black; }
-a:hover{ 
-  background-color:black; 
+a:visited { color:white; }
+a:hover{  
   color: green;
 }
 a:active {color:#0000FF;}  /* selected link */
@@ -67,22 +66,29 @@ a:active {color:#0000FF;}  /* selected link */
 
 
 nav {
-    text-align: center;
+    text-align: left;
 }
 
 nav li {
     list-style: none;
     display: inline;
-    margin: 0 1em;
+    margin: 0 left;
 }
 
-.mylink {
-  background-color: #66FFCC;
+.share {
+  background-color: #254117;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
-  border: 5px solid #009900;
+  border: 2px solid #009900;
   padding: 5px;
 }
+
+#header{
+  background-color: #254117;
+  margin: 0 auto;
+  width: 70%;
+}
+
 
 /* Supress borders after the button is pressed */
 #PARSE:focus {outline:0; }
