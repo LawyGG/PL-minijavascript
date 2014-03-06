@@ -8,7 +8,7 @@ GEM
     tilt (1.4.1)
 
 PLATFORMS
-  x86-mingw32
+  ruby
 
 DEPENDENCIES
   sinatra (= 1.1.0)
