@@ -27,3 +27,44 @@ suite('Tokens', function(){
     chai.expect(function () { input_str.tokens() }).to.throw(resultado_str);
   });
 });
+
+suite('Parser', function(){
+  // Probamos el parser.
+  test('Parser', function(){
+    var parse = make_parse();
+	var input_str = "var a = 20;";
+	var esperado_str = "{\n    \"value\": \"=\",\n    \"arity\": \"binary\",\n    \"first\": {\n        \"value\": \"a\",\n        \"arity\": \"name\"\n    },\n    \"second\": {\n        \"value\": 20,\n        \"arity\": \"literal\"\n    }\n}";
+
+	var resultado_str, tree;
+    try {
+      tree = parse(input_str);
+      resultado_str = JSON.stringify(tree, ['key', 'name', 'message',
+           'value', 'arity', 'first', 'second', 'third', 'fourth'], 4);
+    } catch (e) {
+      resultado_str = JSON.stringify(e, ['name', 'message', 'from', 'to', 'key',
+              'value', 'arity', 'first', 'second', 'third', 'fourth'], 4);
+    }
+
+	assert.equal(esperado_str, resultado_str);
+  });
+  
+  // Probamos el parser con errores.
+  test('Parser: Errores', function(){
+    var parse = make_parse();
+	var input_str = "error = $;";
+	var esperado_str = "\"Syntax error near \'$;\'\"";
+
+	var resultado_str, tree;
+    try {
+      tree = parse(input_str);
+      resultado_str = JSON.stringify(tree, ['key', 'name', 'message',
+           'value', 'arity', 'first', 'second', 'third', 'fourth'], 4);
+    } catch (e) {
+      resultado_str = JSON.stringify(e, ['name', 'message', 'from', 'to', 'key',
+              'value', 'arity', 'first', 'second', 'third', 'fourth'], 4);
+    }
+
+	assert.equal(esperado_str, resultado_str);
+  });
+});
+
