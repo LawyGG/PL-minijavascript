@@ -7,8 +7,12 @@
   </p>
   <h2>Input</h2>
   <p>
-  Fill the input box with javascript code:
+  Fill the input box with javascript code or click in one of these buttons to load an example:<br>
+  <button id ="input2" type="button" onclick="dump('input2.txt');">input2</button>
+  <button id ="input3" type="button" onclick="dump('expression.txt');">input3</button>
+  <button id ="input4" type="button" onclick="dump('assignment.txt');">input4</button>
   </p>
+  
   <textarea id="INPUT">
      var a = "hello"; // initialize a
      var b = function(x) {
@@ -19,16 +23,12 @@
   <br>
   <input id="PARSE" value=parse type=button class="mylink">
   <pre id=OUTPUT></pre>
-
-   
-<script>
+  
+  <script>
       function dump(fileName) {
           $.get(fileName, function (data) {
               $("#INPUT").val(data);
           });
       };
-</script> 
+  </script> 
   
-        <button id ="input2" type="button" onclick="dump('input2.txt');">input2</button>
-        <button id ="input3" type="button" onclick="dump('expression.txt');">input3</button>
-		<button id ="input4" type="button" onclick="dump('assignment.txt');">input4</button>
