@@ -8,14 +8,14 @@
 
 // Transform a token object into an exception object and throw it.
 
-/*
-Object.prototype.error = function (message, t) {
+
+Object.constructor.prototype.error = function (message, t) {
     t = t || this;
     t.name = "SyntaxError";
     t.message = message;
     throw t;
 };
-*/
+
 
 
 function main() {
